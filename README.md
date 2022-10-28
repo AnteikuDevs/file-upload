@@ -71,7 +71,7 @@ _This is how to install and use this plugin._
 2. Load script
 
    ```html
-   <script src="./file-upload/file-upload.js"></script>
+   <script src="./file-upload/file-upload.min.js"></script>
    ```
 3. Use plugin
 
