@@ -44,7 +44,8 @@ Use the `README.md` to get started.
 
 this plugin is made using:
 
-* [![Javascript][javascript.com]][Javascript-url]
+![Javascript][javascript.com]
+![Css3][css3.com]
 
 
 
@@ -165,3 +166,5 @@ Project Link: [https://github.com/AnteikuDevsOrg/file-uploads](https://github.co
 
 
 [product-screenshot]: src/highlight.png
+[javascript.com]: https://img.shields.io/badge/javascript-f7df1e?style=for-the-badge&logo=javascript&logoColor=black
+[css3.com]: https://img.shields.io/badge/css-2299F8?style=for-the-badge&logo=css3&logoColor=white
