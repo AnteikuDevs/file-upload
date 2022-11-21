@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Demo File Upload</title>
+    <link rel="stylesheet" href="../file-upload.min.css">
+    <style>
+
+        body {
+            /* background: linear-gradient(to right, rgba(43,50,82,1) 0%, rgba(63,76,136,1) 100%); */
+            background-color: #fff;
+            background-repeat: no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-size: cover;
+        }
+
+        /* #demo-file-upload {
+            width: 550px;
+        } */
+
+    </style>
+</head>
+<body>
+    
+    <div id="demo-file-upload"></div>
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="../file-upload.js"></script>
+<script>
+
+    let cardUpload = new FileUpload('#demo-file-upload', {
+        title: "Demo File Upload",
+        accept: [
+            'png',
+            'webp',
+            'mp4'
+        ],
+        maxFile: 3,
+        maxSize: 3,
+    })
+
+</script>
+</body>
+</html>
