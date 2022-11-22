@@ -2,7 +2,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/AnteikuDevsOrg/file-uploads">
+  <a href="https://github.com/AnteikuDevs/file-upload">
     <img src="src/logo.png" alt="Logo" width="200">
   </a>
 
@@ -14,11 +14,11 @@
     <a href="#getting-started"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/AnteikuDevsOrg/file-uploads/demo">View Demo</a>
+    <a href="https://anteikudevs.github.io/file-upload/demo">View Demo</a>
     ·
-    <a href="https://github.com/AnteikuDevsOrg/file-uploads/issues">Report Bug</a>
+    <a href="https://github.com/AnteikuDevs/file-upload/issues">Report Bug</a>
     ·
-    <a href="https://github.com/AnteikuDevsOrg/file-uploads/issues">Request Feature</a>
+    <a href="https://github.com/AnteikuDevs/file-upload/issues">Request Feature</a>
   </p>
 </div>
 
@@ -185,7 +185,7 @@ _This is how to install and use this plugin._
 - [x] Upload Files
 - [x] Upgrade Version
 
-See the [open issues](https://github.com/AnteikuDevsOrg/file-uploads/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/AnteikuDevs/file-upload/issues) for a full list of proposed features (and known issues).
 
 <!-- CONTACT -->
 ## Contact
@@ -193,7 +193,7 @@ See the [open issues](https://github.com/AnteikuDevsOrg/file-uploads/issues) for
 Teguh Sugiarto - [@teguhdevs](https://instagram.com/teguhdevs) <br>
 AnteikuDevs - [@anteikudevs](https://instagram.com/anteikudevs)
 
-Project Link: [https://github.com/AnteikuDevs/file-uploads](https://github.com/AnteikuDevsOrg/file-uploads)
+Project Link: [https://github.com/AnteikuDevs/file-uploads](https://github.com/AnteikuDevs/file-upload)
 
 
 [product-screenshot]: src/preview.png
