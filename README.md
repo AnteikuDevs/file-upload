@@ -6,7 +6,7 @@
     <img src="src/logo.png" alt="Logo" width="200">
   </a>
 
-  <h3 align="center">FileUpload Plugin by <a href="https://github.com/AnteikuDevs">anteikudevs</a></h3>
+  <h3 align="center">File Upload Plugin by <a href="https://github.com/AnteikuDevs">anteikudevs</a></h3>
 
   <p align="center">
     FileUpload
@@ -46,6 +46,8 @@ this plugin is made using:
 
 ![Javascript][javascript.com]
 ![Css3][css3.com]
+![Sass][sass-lang.com]
+![Jquery][jquery.com]
 
 
 
@@ -61,7 +63,7 @@ _This is how to install and use this plugin._
 1. Clone the repo
 
    ```sh
-   git clone https://github.com/AnteikuDevsOrg/file-uploads.git
+   git clone https://github.com/AnteikuDevs/file-uploads.git
    ```
 2. Load css
 
@@ -71,80 +73,108 @@ _This is how to install and use this plugin._
 2. Load script
 
    ```html
+   <script src="./jquery.min.js"></script>
    <script src="./file-upload/file-upload.min.js"></script>
    ```
 3. Use plugin
 
    ```js
-   let FileData = new FileUpload('#selector',{
-        accept: [
-            'png',
-            'jpg'
-        ],
-        maxSize: 3,
-        maxFile: 1
-    });
+   let FileData = new FileUpload('#selector');
    ```
 4. Use Config
 
    ```js
-   // while there are only a few custom files
+   // while there are only a few custom config
    {
-        // accept config is required
-        accept: [
-            '*',//this is for all extensions
-            'gif',
-            'gif',
-            'jpg',
-            'jpeg',
-            'png',
-            'webp',
-            'xlsx',
-            'xls',
-            'pdf',
-            'docx',
-            'doc',
-            'ppt',
-            'pptx',
+        accept: [ // not required
+            "*",// default
+            // other extension support
+            "mp3"
+            "wav"
+            "mp4"
+            "mkv"
+            "gif"
+            "jpg"
+            "jpeg"
+            "png"
+            "webp"
+            "svg"
+            "xlsx"
+            "xls"
+            "csv"
+            "pdf"
+            "docx"
+            "doc"
+            "ppt"
+            "pptx"
         ],
         // optional value
-        maxSize: 5,// default 100 in mb
-        maxFile: 10,// default 100 files
+        maxSize: 5,// not required
+        maxFile: 10,// not required, on MB
+        lang: 'en',// no required, default en value is en and id only
+        customs: { // not required, for the custom color
+            primary: '#FF5900',
+            secondary: '#FFF1EA',
+            background: '#fff'
+        }
     }
    ```
 5. Get result data
 
    ```js
-   // only base64 result data
-   FileData.data()
-   // result: [base64:file,base64:file,...]
+   // get all data attribute
+   FileData.getValue()
+   /*
+      result: [
+         {
+            data:"data:image/png;base64,...", // base64 data
+            fileType: "image", // type of file
+            id: "__fQQeANSCgBuDP", // id generated
+            name: "anteikudevs.png", // filename
+            size: 258.71, // file size
+            type: "image/png" // type of file format
+         }
+      ]
+   */
 
-   // only files result data
-   FileData.file()// comming soon
-   // result: 
+   // get all data base64 only
+   FileData.getValue(base64Only = true)
+   
+   /*
+      result: [
+         "data:image/png;base64,...",
+         "data:image/jpg;base64,...",
+      ]
+   */
    ```
-   <!-- beta -->
+   
 6. Set current data
 
    ```js
-   FileData.set([
-    {
-        id: 1,
-        data: 'https://../image.jpg'
-    }
+   FileData.setValue([
+      {
+         id: 1,
+         data: 'https://../image.jpg'
+      }
    ])
    ```
 7. Clear data
 
    ```js
-   // delete all uploaded files
-   FileData.clear()
+   // delete all uploaded files or preview files on set value
+   FileData.clearValue()
    ```
-8. Get deleted data
+8. Get deleted data from setValue()
 
    ```js
    // this will generate the data id that has been set previously
-   FileData.deletedData()
+   FileData.deletedIds
+   /*
+      result: [
+         1,
+         2,
+      ]
+   */
    ```
 
 
@@ -152,19 +182,22 @@ _This is how to install and use this plugin._
 ## Roadmap
 
 - [x] Add README.md
-- [ ] Upload Plugin
-- [ ] Upgrade Version
+- [x] Upload Files
+- [x] Upgrade Version
 
 See the [open issues](https://github.com/AnteikuDevsOrg/file-uploads/issues) for a full list of proposed features (and known issues).
 
 <!-- CONTACT -->
 ## Contact
 
-Teguh Sugiarto - [@teguhdevs](https://instagram.com/teguhdevs)
+Teguh Sugiarto - [@teguhdevs](https://instagram.com/teguhdevs) <br>
+AnteikuDevs - [@anteikudevs](https://instagram.com/anteikudevs)
 
-Project Link: [https://github.com/AnteikuDevsOrg/file-uploads](https://github.com/AnteikuDevsOrg/file-uploads)
+Project Link: [https://github.com/AnteikuDevs/file-uploads](https://github.com/AnteikuDevsOrg/file-uploads)
 
 
-[product-screenshot]: src/highlight.png
+[product-screenshot]: src/preview.png
 [javascript.com]: https://img.shields.io/badge/javascript-f7df1e?style=for-the-badge&logo=javascript&logoColor=black
 [css3.com]: https://img.shields.io/badge/css-2299F8?style=for-the-badge&logo=css3&logoColor=white
+[sass-lang.com]: https://img.shields.io/badge/sass-D989B2?style=for-the-badge&logo=sass&logoColor=white
+[jquery.com]: https://img.shields.io/badge/jquery-1161A0?style=for-the-badge&logo=jquery&logoColor=white

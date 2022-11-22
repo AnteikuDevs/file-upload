@@ -9,7 +9,7 @@
     <style>
 
         body {
-            /* background: linear-gradient(to right, rgba(43,50,82,1) 0%, rgba(63,76,136,1) 100%); */
+            background: linear-gradient(to right, rgba(43,50,82,1) 0%, rgba(63,76,136,1) 100%);
             background-color: #fff;
             background-repeat: no-repeat;
             display: flex;
@@ -19,30 +19,38 @@
             background-size: cover;
         }
 
-        /* #demo-file-upload {
-            width: 550px;
-        } */
-
     </style>
 </head>
 <body>
     
-    <div id="demo-file-upload"></div>
+    <div id="demo-file-upload" style="width: 450px;"></div>
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="../file-upload.js"></script>
 <script>
 
     let cardUpload = new FileUpload('#demo-file-upload', {
-        title: "Demo File Upload",
+        title: "Demo FileUpload",
         accept: [
             'png',
-            'webp',
-            'mp4'
+            'jpg',
         ],
         maxFile: 3,
+        lang: 'en',
         maxSize: 3,
+        // customs: {
+        //     primary: '#FF5900',
+        //     secondary: '#FFF1EA',
+        //     background: '#fff'
+        // }
     })
+
+    cardUpload.setValue([
+        {
+            id: 1,
+            data: '/src/logo.png'
+        }
+    ])
 
 </script>
 </body>
