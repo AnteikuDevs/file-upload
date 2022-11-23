@@ -14,7 +14,7 @@
     <a href="#getting-started"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://anteikudevs.github.io/file-upload/demo">View Demo</a>
+    <a href="https://anteikudevs.github.io/file-upload/demo/index.html">View Demo</a>
     ·
     <a href="https://github.com/AnteikuDevs/file-upload/issues">Report Bug</a>
     ·
