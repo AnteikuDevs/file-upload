@@ -107,6 +107,12 @@ class FileUpload {
 
         if(this.selector)
         {
+
+            if($(this.selector).length == 0)
+            {
+                return false
+            }
+
             let selectorId = '__'+file_upload_GenerateRandId(9)
             $(this.selector).attr(selectorId,'')
             this.selectorId = '['+selectorId+']'
@@ -584,6 +590,7 @@ class FileUpload {
         setTimeout(function(){
             $(_this.contentId).removeClass('drop drag')
         },300)
+
     }
 
     getAcceptFileType(format)
@@ -647,6 +654,7 @@ class FileUpload {
             
         }
         $(this.resultId).append(content)
+        $(this.selector).trigger('upload')
 
     }
 
