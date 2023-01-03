@@ -724,7 +724,7 @@ class FileUpload {
         })
         
         if(this.maxFile == 1){
-            return result[0]
+            return result[0]?? null;
         }
 
         return result;
