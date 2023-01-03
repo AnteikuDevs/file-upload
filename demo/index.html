@@ -37,7 +37,7 @@
             'png',
             'jpg',
         ],
-        maxFile: 3,
+        maxFile: 1,
         lang: 'en',
         maxSize: 3,
         // customs: {
@@ -45,6 +45,9 @@
         //     secondary: '#FFF1EA',
         //     background: '#fff'
         // }
+    })
+    $(document).on('upload','#demo-file-upload', function(){
+        console.log(cardUpload.getValue(true))
     })
 </script>
 </body>
