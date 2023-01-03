@@ -713,16 +713,19 @@ class FileUpload {
     }
 
     getValue(base64Only = false){
-        if(base64Only == false)
-        {
-            return this.data
-        }
-
         let result = []
-        
         $.each(this.data, function(i,key){
-            result.push(key.data)
+            if(base64Only){
+
+                result.push(key.data)
+            }else{                
+                result.push(key)
+            }
         })
+        
+        if(this.maxFile == 1){
+            return result[0]
+        }
 
         return result;
 
