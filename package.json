@@ -1,0 +1,24 @@
+{
+  "name": "anteikudevs-file-upload",
+  "version": "1.0.1",
+  "description": "AnteikuDevs FileUpload",
+  "main": "file-upload.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnteikuDevs/file-upload.git"
+  },
+  "keywords": [
+    "AnteikuDevs",
+    "FileUpload",
+    "AnteikuDevs"
+  ],
+  "author": "teguhdevs",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnteikuDevs/file-upload/issues"
+  },
+  "homepage": "https://github.com/AnteikuDevs/file-upload#readme"
+}

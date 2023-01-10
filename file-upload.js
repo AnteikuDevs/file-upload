@@ -42,7 +42,7 @@ function file_upload_createEvent(selector,event,callback) {
 
 let modalId = '__'+file_upload_GenerateRandId(17);
 
-$('body').append(`<div class="file__upload_preview_backdrop"></div>`).append(`<div class="file__upload_preview" ${modalId}><div class="file__upload_preview_dialog"><div class="file__upload_preview_content"><div class="file__upload_preview_header"><h4 class="file__upload_preview_title">Preview</h4><button class="file__upload_preview_btn_close" data-close="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg></button></div><div class="file__upload_preview_body"></div><div class="file__upload_preview_footer"><button class="btn" data-close="true">Close</button></div></div></div></div>`)
+$('body').append(`<div class="file__upload_preview_backdrop"></div>`).append(`<div class="file__upload_preview" ${modalId}><div class="file__upload_preview_dialog"><div class="file__upload_preview_content"><div class="file__upload_preview_header"><h4 class="file__upload_preview_title">Preview</h4><button type="button" class="file__upload_preview_btn_close" data-close="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg></button></div><div class="file__upload_preview_body"></div><div class="file__upload_preview_footer"><button  type="button" class="btn" data-close="true">Close</button></div></div></div></div>`)
 
 file_upload_createEvent('['+modalId+'] [data-close="true"]','click', function(e){
     $('['+modalId+']').addClass('hiding')
@@ -337,7 +337,7 @@ class FileUpload {
 
         $('body').append(inputContent)
 
-        let content = `<div class="file__upload_action"><button class="file__upload_action_browse" ${btnInputRender}>${browseText}</button></div>`
+        let content = `<div class="file__upload_action"><button type="button" class="file__upload_action_browse" ${btnInputRender}>${browseText}</button></div>`
 
         file_upload_createEvent('['+btnInputRender+']','click',function(e){
             $('['+contentInputRender+']').trigger('click')
@@ -636,7 +636,7 @@ class FileUpload {
             fileNameHighlight = fileNameHighlight.substr(0, 10) + '....' + fileNameHighlight.substr(fileNameHighlight.length-10, fileNameHighlight.length);
         }
 
-        let content = `<div class="file__upload_result_item" ${data.id}>${resultImg}<div class="file__upload_result_info"><h4 class="file__upload_result_info_title">${fileNameHighlight}</h4><span class="file_upload_result_info_span">${data.size} KB</span></div><div class="file__upload_result_action"><button class="file__upload_result_action_close" ${closeIds}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg></button></div></div>`
+        let content = `<div class="file__upload_result_item" ${data.id}>${resultImg}<div class="file__upload_result_info"><h4 class="file__upload_result_info_title">${fileNameHighlight}</h4><span class="file_upload_result_info_span">${data.size} KB</span></div><div class="file__upload_result_action"><button type="button" class="file__upload_result_action_close" ${closeIds}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg></button></div></div>`
 
         file_upload_createEvent('['+closeIds+']','click',function(e){
             _this.removeUploadedFile(data.id)
@@ -759,7 +759,7 @@ class FileUpload {
             resultItemId = '__'+file_upload_GenerateRandId(12),
             itemIds ='__'+file_upload_GenerateRandId(13) ;
 
-        let content = `<div class="file__upload_result_item" ${itemIds}>${resultImg}<div class="file__upload_result_info"><h4 class="file__upload_result_info_title">${data.name}</h4></div><div class="file__upload_result_action"><button class="file__upload_result_action_close" ${closeIds}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg></button></div></div>`
+        let content = `<div class="file__upload_result_item" ${itemIds}>${resultImg}<div class="file__upload_result_info"><h4 class="file__upload_result_info_title">${data.name}</h4></div><div class="file__upload_result_action"><button type="button" class="file__upload_result_action_close" ${closeIds}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg></button></div></div>`
 
         file_upload_createEvent('['+closeIds+']','click',function(e){
             _this.removeSetValue(itemIds,data.id)
