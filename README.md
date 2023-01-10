@@ -60,6 +60,8 @@ This plugin is specifically used in html not framework and is made to make it ea
 
 _This is how to install and use this plugin._
 
+### Install from git
+
 1. Clone the repo
 
    ```sh
@@ -176,7 +178,113 @@ _This is how to install and use this plugin._
       ]
    */
    ```
+### Install from npm
 
+1. Install from npm
+
+   ```sh
+   npm install anteikudevs-file-upload
+   ```
+2. Use plugin
+
+   ```js
+   let FileData = new FileUpload('#selector');
+   ```
+3. Use Config
+
+   ```js
+   // while there are only a few custom config
+   {
+        accept: [ // not required
+            "*",// default
+            // other extension support
+            "mp3"
+            "wav"
+            "mp4"
+            "mkv"
+            "gif"
+            "jpg"
+            "jpeg"
+            "png"
+            "webp"
+            "svg"
+            "xlsx"
+            "xls"
+            "csv"
+            "pdf"
+            "docx"
+            "doc"
+            "ppt"
+            "pptx"
+        ],
+        // optional value
+        maxSize: 5,// not required
+        maxFile: 10,// not required, on MB
+        lang: 'en',// no required, default en value is en and id only
+        customs: { // not required, for the custom color
+            primary: '#FF5900',
+            secondary: '#FFF1EA',
+            background: '#fff'
+        }
+    }
+   ```
+4. Get result data
+
+   ```js
+   // get all data attribute
+   FileData.getValue()
+   /*
+      result: [
+         {
+            data:"data:image/png;base64,...", // base64 data
+            fileType: "image", // type of file
+            id: "__fQQeANSCgBuDP", // id generated
+            name: "anteikudevs.png", // filename
+            size: 258.71, // file size
+            type: "image/png" // type of file format
+         }
+      ]
+   */
+
+   // get all data base64 only
+   FileData.getValue(base64Only = true)
+   
+   /*
+      result: [
+         "data:image/png;base64,...",
+         "data:image/jpg;base64,...",
+      ]
+   */
+   ```
+   
+5. Set current data
+
+   ```js
+   FileData.setValue([
+      {
+         id: 1,
+         data: 'https://../image.jpg'
+      }
+   ])
+   ```
+6. Clear data
+
+   ```js
+   // delete all uploaded files or preview files on set value
+   FileData.clearValue()
+   ```
+7. Get deleted data from setValue()
+
+   ```js
+   // this will generate the data id that has been set previously
+   FileData.deletedIds
+   /*
+      result: [
+         1,
+         2,
+      ]
+   */
+   ```
 
 <!-- ROADMAP -->
 ## Roadmap

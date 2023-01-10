@@ -840,5 +840,3 @@ class FileUpload {
     }
 
 }
-
-export default FileUpload
