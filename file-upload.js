@@ -67,8 +67,9 @@ file_upload_createEvent('['+modalId+']','click', function(e,_this){
 })
 
 class FileUpload {
-    constructor(selector,config = {})
+    constructor(selector,config = {},log = false)
     {
+
         this.selector       = selector
         this.config         = config
 
@@ -96,8 +97,23 @@ class FileUpload {
         // data
         this.data           = []
         this.deletedIds     = []
-        
+
+        this.defaultStyle = `padding: 2px 5px;
+            border-radius: 4px;
+            color: white; 
+            background-color: #f57272`
+
+        if(log)
+        {
+            this.log('Enabled')
+        }
+                    
         this.validateConfig()
+    }
+
+    log(description)
+    {
+        console.log("%canteikudevs-file-upload",this.defaultStyle,description)
     }
 
     validateConfig()
@@ -128,7 +144,7 @@ class FileUpload {
         {
             if(!Array.isArray(config.accept))
             {
-                console.log('Config {accept} is not array.');
+                this.log('Config {accept} is not array.');
                 return false
             }
             
@@ -147,7 +163,7 @@ class FileUpload {
                         acceptFiles.push(accFile)
                         // acceptFiles.push('.'+key)
                     }else{
-                        console.log('Accept (.'+key+') format was not found.');
+                        this.log('Accept (.'+key+') format was not found.');
                         return false
                     }
                 }
@@ -164,7 +180,7 @@ class FileUpload {
         {
             if(isNaN(config.maxSize))
             {
-                console.log('Config {maxSize} is not a number.');
+                this.log('Config {maxSize} is not a number.');
                 return false
             }
             this.maxSize = parseInt(config.maxSize)
@@ -174,7 +190,7 @@ class FileUpload {
         {
             if(isNaN(config.maxFile))
             {
-                console.log('Config {maxFile} is not a number.');
+                this.log('Config {maxFile} is not a number.');
                 return false
             }
             this.maxFile = parseInt(config.maxFile)
@@ -194,7 +210,7 @@ class FileUpload {
         // {
         //     if(isNaN(config.minFile))
         //     {
-        //         console.log('Config {minFile} is not a number.');
+        //         this.log('Config {minFile} is not a number.');
         //         return false
         //     }
         //     this.minFile = parseInt(config.minFile)
@@ -204,7 +220,7 @@ class FileUpload {
         {
             if(!['id','en'].includes(config.lang))
             {
-                console.log('Config {lang} only id and en');
+                this.log('Config {lang} only id and en');
                 return false
             }
             this.lang = config.lang
