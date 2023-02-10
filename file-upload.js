@@ -423,6 +423,11 @@ class FileUpload {
         this.contentId = '['+_contentId+']'
         let content = `<div class="file__upload_content" ${_contentId}>${contentIcon}${this.drawContent_info()}${this.drawContent_action()}${this.drawContent_loading()}${this.drawContent_dragEvent()}</div>${this.drawError()}${this.drawResult()}`
 
+        if(this.flexContent == true)
+        {
+            content
+        }
+
         this.renderEventDragAndDrop()
 
         return content
