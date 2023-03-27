@@ -1,6 +1,6 @@
 {
   "name": "anteikudevs-file-upload",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "AnteikuDevs FileUpload",
   "main": "file-upload-module.js",
   "scripts": {
