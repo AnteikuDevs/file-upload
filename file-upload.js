@@ -96,6 +96,7 @@ class FileUpload {
 
         // data
         this.data           = []
+        this.currentData    = []
         this.deletedIds     = []
 
         this.defaultStyle = `padding: 2px 5px;
@@ -751,6 +752,19 @@ class FileUpload {
 
         return result;
 
+    }
+
+    _refresh()
+    {
+
+    }
+
+    clear()
+    {
+        this.data = []
+        $(this.resultId).html('')
+        $(this.browseId).removeClass('disabled')
+        $(this.selector).trigger('upload')
     }
 
     // setCurrentData

@@ -18,12 +18,27 @@
             background-size: cover;
         }
 
+        .btn-clear {
+            display: block;
+            width: 100%;
+            padding: .8rem 1rem;
+            border: 0;
+            background: #ff5252;
+            margin: 1rem 0;
+            border-radius: 10px;
+            color: #fff;
+            font-size: 15px;
+            cursor: pointer;
+        }
+
     </style>
 </head>
 <body>
     
     <div>
         <div id="demo-file-upload" style="width: 450px;"></div>
+
+        <button class="btn-clear">Clear</button>
     </div>
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -47,6 +62,10 @@
     })
     $(document).on('upload','#demo-file-upload', function(){
         console.log(cardUpload.getValue(true))
+    })
+    $(document).on('click','.btn-clear',function(e){
+        e.preventDefault()
+        cardUpload.clear()
     })
 </script>
 </body>
