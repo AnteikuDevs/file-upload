@@ -756,15 +756,21 @@ class FileUpload {
 
     _refresh()
     {
-
+        if(this.maxFile != null)
+        {
+            if(this.data.length == this.maxFile || this.currentData.length == this.maxFile)
+            {
+                $(this.browseId).addClass('disabled')
+                
+            }
+        }
+        $(this.selector).trigger('upload')
     }
 
     clear()
     {
         this.data = []
-        $(this.resultId).html('')
-        $(this.browseId).removeClass('disabled')
-        $(this.selector).trigger('upload')
+        this._refresh();
     }
 
     // setCurrentData
@@ -857,6 +863,7 @@ class FileUpload {
         })
 
         this.currentData = currentData
+        this._refresh()
 
     }
 

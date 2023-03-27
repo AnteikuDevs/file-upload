@@ -60,6 +60,12 @@
         //     background: '#fff'
         // }
     })
+    cardUpload.setValue([
+        {
+            id: '-',
+            data: '/src/preview.png'
+        }
+    ])
     $(document).on('upload','#demo-file-upload', function(){
         console.log(cardUpload.getValue(true))
     })
