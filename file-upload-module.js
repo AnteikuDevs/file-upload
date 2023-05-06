@@ -424,6 +424,11 @@ class FileUpload {
         this.contentId = '['+_contentId+']'
         let content = `<div class="file__upload_content" ${_contentId}>${contentIcon}${this.drawContent_info()}${this.drawContent_action()}${this.drawContent_loading()}${this.drawContent_dragEvent()}</div>${this.drawError()}${this.drawResult()}`
 
+        if(this.flexContent == true)
+        {
+            content
+        }
+
         this.renderEventDragAndDrop()
 
         return content
@@ -753,22 +758,40 @@ class FileUpload {
     {
         if(this.maxFile != null)
         {
-            if(this.data.length == this.maxFile || this.currentData.length == this.maxFile)
+            if(this.data.length == this.maxFile)
             {
                 $(this.browseId).addClass('disabled')
                 
+            }else{
+                
+                $(this.browseId).removeClass('disabled')
             }
         }
-        $(this.selector).trigger('upload')
     }
 
     clear()
     {
         this.data = []
-        this._refresh()
+        $(this.resultId).html('')
+        this._refresh();
     }
 
     // setCurrentData
+
+    _refreshValue()
+    {
+        if(this.maxFile != null)
+        {
+            if(this.currentData.length == this.maxFile)
+            {
+                $(this.browseId).addClass('disabled')
+                
+            }else{
+                
+                $(this.browseId).removeClass('disabled')
+            }
+        }
+    }
 
     drawSetValue(data){
 
@@ -858,7 +881,7 @@ class FileUpload {
         })
 
         this.currentData = currentData
-        this._refresh()
+        this._refreshValue()
 
     }
 

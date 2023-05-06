@@ -758,22 +758,40 @@ class FileUpload {
     {
         if(this.maxFile != null)
         {
-            if(this.data.length == this.maxFile || this.currentData.length == this.maxFile)
+            if(this.data.length == this.maxFile)
             {
                 $(this.browseId).addClass('disabled')
                 
+            }else{
+                
+                $(this.browseId).removeClass('disabled')
             }
         }
-        $(this.selector).trigger('upload')
     }
 
     clear()
     {
         this.data = []
+        $(this.resultId).html('')
         this._refresh();
     }
 
     // setCurrentData
+
+    _refreshValue()
+    {
+        if(this.maxFile != null)
+        {
+            if(this.currentData.length == this.maxFile)
+            {
+                $(this.browseId).addClass('disabled')
+                
+            }else{
+                
+                $(this.browseId).removeClass('disabled')
+            }
+        }
+    }
 
     drawSetValue(data){
 
@@ -863,7 +881,7 @@ class FileUpload {
         })
 
         this.currentData = currentData
-        this._refresh()
+        this._refreshValue()
 
     }
 
