@@ -24,24 +24,23 @@
             padding: .8rem 1rem;
             border: 0;
             background: #ff5252;
-            margin: 1rem 0;
             border-radius: 10px;
             color: #fff;
             font-size: 15px;
             cursor: pointer;
+            max-width: 400px;
+            margin: auto;
         }
 
         .container {
             width: 100%;
             max-width: 800px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
         }
 
         #demo-file-upload {
             width: 100%;
+            margin: 0 auto;
+            margin-bottom: 1rem;
         }
 
     </style>
@@ -50,12 +49,11 @@
     
     <div class="container">
         <div id="demo-file-upload" data-theme="dark"></div>
-
         <button class="btn-clear">Clear</button>
     </div>
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="../file-upload.js"></script>
+<script src="../file-upload.min.js"></script>
 <script>
 
     let cardUpload = new FileUpload('#demo-file-upload', {
@@ -73,14 +71,9 @@
         //     background: '#fff'
         // }
     })
-    cardUpload.setValue([
-        {
-            id: '-',
-            data: '/src/preview.png'
-        }
-    ])
+    
     $(document).on('upload','#demo-file-upload', function(){
-        console.log(cardUpload.getValue(true))
+        cardUpload.log(cardUpload.getValue(true))
     })
     $(document).on('click','.btn-clear',function(e){
         e.preventDefault()
