@@ -31,12 +31,26 @@
             cursor: pointer;
         }
 
+        .container {
+            width: 100%;
+            max-width: 800px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        #demo-file-upload {
+            width: 100%;
+        }
+
     </style>
+    <link rel="stylesheet" href="../file-upload.css">
 </head>
 <body>
     
-    <div>
-        <div id="demo-file-upload" style="width: 450px;"></div>
+    <div class="container">
+        <div id="demo-file-upload" data-theme="dark"></div>
 
         <button class="btn-clear">Clear</button>
     </div>
@@ -51,9 +65,9 @@
             'png',
             'jpg',
         ],
-        maxFile: 1,
+        maxFile: 2,
         lang: 'en',
-        maxSize: 3,
+        maxSize: 2,
         // customs: {
         //     primary: '#FF5900',
         //     secondary: '#FFF1EA',

@@ -42,13 +42,14 @@ $breakpoints-lg: 992px;
 $breakpoints-xl: 1200px;
 $breakpoints-xxl: 1400px;
 
+$maxWidthContent: 400px;
+
 * {
     box-sizing: border-box;
 }
 
 
-
-.file__upload {
+.anteikudevs-fileupload {
     --file-upload-background: #{$primary-bg};
     --file-upload-primary: #{$primary};
     --file-upload-secondary: #{$secondary};
@@ -57,20 +58,22 @@ $breakpoints-xxl: 1400px;
     position: relative;
     user-select: none;
     font-family: "Poppins", sans-serif !important;
+    max-width: $maxWidthContent;
+    
 
     img {
         max-width: 100%;
     }
 
-    .file__upload_content {
+    .anteikudevs-fileupload\:content {
         background-color: var(--file-upload-background,$primary-bg);
         width: 100%;
         display: flex;
         flex-direction: row;
         border-radius: 10px;
         align-items: center;
-        padding: 18px 20px;
-        gap: 20px;
+        padding: .8rem 1rem;
+        gap: 1rem;
         grid-row: 2 / span 2;
         box-shadow: 0 0 10px rgb(100 100 100 / 15%);
         transition: all .2s linear;
@@ -78,9 +81,9 @@ $breakpoints-xxl: 1400px;
         animation: zoomIn;
         animation-duration: .2s;
         position: relative;
-        border: 2px dashed var(--file-upload-tertiary, $tertiary);
         border-image-width: 5px;
         overflow: hidden;
+        flex-wrap: wrap;
 
         &.drag {
             border-color: $warning;
@@ -90,7 +93,7 @@ $breakpoints-xxl: 1400px;
             border-color: $success;
         }
 
-        .file__upload_icon {
+        .anteikudevs-fileupload\:icon {
             width: 70px;
             height: 70px;
             border-radius: 5px;
@@ -105,7 +108,7 @@ $breakpoints-xxl: 1400px;
             position: relative;
             padding: 0.8rem 0;
 
-            .file__upload_icon_svg {
+            .anteikudevs-fileupload\:icon_svg {
                 width: 20px;
                 height: 20px;
                 margin-bottom: 5px;
@@ -116,7 +119,7 @@ $breakpoints-xxl: 1400px;
 
             }
 
-            .file__upload_highlight {
+            .anteikudevs-fileupload\:highlight {
                 width: 100%;
                 font-size: 10px;
                 display: block;
@@ -126,38 +129,50 @@ $breakpoints-xxl: 1400px;
 
         }
 
-        .file__upload_info {
+        .anteikudevs-fileupload\:info {
             flex: 1;
             // padding: 10px;
 
-            .file__upload_info_title {
+            .anteikudevs-fileupload\:info_title {
                 margin: 0;
                 font-size: 14px;
                 font-weight: 600;
                 margin-bottom: 5px;
             }
             
-            .file__upload_info_span {
+            .anteikudevs-fileupload\:info_span {
                 font-size: 12px;
                 color: $gray-600;
                 display: block;
             }
         }
 
-        .file__upload_action {
-            width: 90px;
+        .anteikudevs-fileupload\:action {
+            width: 100%;
             text-align: right;
 
-            .file__upload_action_browse.disabled {
+            @media screen and (min-width: $breakpoints-md) {
+                & {
+                    width: 90px;
+                }
+            }
+
+            .anteikudevs-fileupload\:action_browse.disabled {
                 pointer-events: none;
                 background-color: $gray-100;
                 color: $gray-400;
                 border-color: transparent;
+
+                svg {
+                    fill: $gray-400;
+                }
             }
 
-            .file__upload_action_browse {
+            .anteikudevs-fileupload\:action_browse {
                 transition: all .2s linear;
-                display: inline-block;
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
                 background-color: var(--file-upload-background,$primary-bg);
                 border-radius: 10px;
                 border: 1.5px solid var(--file-upload-primary,$primary);
@@ -165,26 +180,48 @@ $breakpoints-xxl: 1400px;
                 padding: 10px 12px;
                 user-select: none;
                 cursor: pointer;
+                width: 100%;
+
+                // @media screen and (min-width: $breakpoints-md) {
+                //     & {
+                //         width: auto;
+                //     }
+                // }
+
+                svg {
+                    width: 20px;
+                    margin-right: .3rem;
+                    fill: var(--file-upload-primary,$primary);
+                    transition: fill .3s linear;
+                }
             }
 
-            .file__upload_action_browse:focus,
-            .file__upload_action_browse:hover,
-            .file__upload_action_browse:active {
+            .anteikudevs-fileupload\:action_browse:focus,
+            .anteikudevs-fileupload\:action_browse:hover,
+            .anteikudevs-fileupload\:action_browse:active {
                 border-color: transparent;
                 background-color: var(--file-upload-primary,$primary);
                 color: var(--file-upload-background,$primary-bg);
+
+                svg {
+                    fill: var(--file-upload-background,$primary-bg);
+                }
             }
 
-            .file__upload_action_browse.disabled:focus,
-            .file__upload_action_browse.disabled:hover,
-            .file__upload_action_browse.disabled:active {
+            .anteikudevs-fileupload\:action_browse.disabled:focus,
+            .anteikudevs-fileupload\:action_browse.disabled:hover,
+            .anteikudevs-fileupload\:action_browse.disabled:active {
                 background-color: $gray-100;
                 color: $gray-400;
+
+                svg {
+                    fill: $gray-400;
+                }
             }
 
         }
 
-        .file__upload_loading {
+        .anteikudevs-fileupload\:loading {
             width: 100%;
             height: 100%;
             position: absolute;
@@ -207,7 +244,7 @@ $breakpoints-xxl: 1400px;
             }
         }
         
-        .file__upload_dragged {
+        .anteikudevs-fileupload\:dragged {
             width: 100%;
             height: 100%;
             position: absolute;
@@ -232,11 +269,11 @@ $breakpoints-xxl: 1400px;
 
     }
 
-    .file__upload_error {
+    .anteikudevs-fileupload\:error {
         position: relative;
         width: 100%;
 
-        .file__upload_error_item {
+        .anteikudevs-fileupload\:error_item {
             font-size: 12px;
             color: $danger;
             display: block;
@@ -247,7 +284,7 @@ $breakpoints-xxl: 1400px;
             border-radius: 10px;
             background: var(--file-upload-sub-danger,$sub-danger);
 
-            .file__upload_error_filename {
+            .anteikudevs-fileupload\:error_filename {
                 max-width: 100px;
             }
             
@@ -255,12 +292,12 @@ $breakpoints-xxl: 1400px;
 
     }
 
-    .file__upload_result {
+    .anteikudevs-fileupload\:result {
 
         position: relative;
         width: 100%;
 
-        .file__upload_result_item {
+        .anteikudevs-fileupload\:result_item {
             width: 100%;
             display: flex;
             flex-direction: row;
@@ -275,7 +312,7 @@ $breakpoints-xxl: 1400px;
             animation-duration: .5s;
             background-color: var(--file-upload-background,$primary-bg);
 
-            .file__upload_result_image {
+            .anteikudevs-fileupload\:result_image {
                 width: 43px;
                 height: 43px;
                 border-radius: 5px;
@@ -306,14 +343,19 @@ $breakpoints-xxl: 1400px;
 
             }
 
-            .file__upload_result_info {
+            .anteikudevs-fileupload\:result_info {
                 flex: 1;
 
-                .file__upload_result_info_title {
+                .anteikudevs-fileupload\:result_info_title {
                     font-size: 14px;
                     font-weight: 600;
                     margin: 0;
                     margin-bottom: 5px;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1; /* Number of lines to display */
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
                 }
 
                 .file_upload_result_info_span {
@@ -324,10 +366,10 @@ $breakpoints-xxl: 1400px;
 
             }
 
-            .file__upload_result_action {
+            .anteikudevs-fileupload\:result_action {
                 width: 20px;
 
-                .file__upload_result_action_close {
+                .anteikudevs-fileupload\:result_action_close {
                     width: 25px;
                     height: 25px;
                     transition: all .2s linear;
@@ -357,7 +399,7 @@ $breakpoints-xxl: 1400px;
 
 }
 
-.file__upload_preview {
+.anteikudevs-fileupload\:preview {
 
     position: fixed;
     top: 0;
@@ -378,7 +420,7 @@ $breakpoints-xxl: 1400px;
     
     &.show {
         display: flex;
-        .file__upload_preview_dialog {
+        .anteikudevs-fileupload\:preview_dialog {
             display: block;
             animation: zoomIn;
             animation-duration: .3s;
@@ -386,13 +428,13 @@ $breakpoints-xxl: 1400px;
     }
     
     &.hiding {
-        .file__upload_preview_dialog {
+        .anteikudevs-fileupload\:preview_dialog {
             animation: zoomOut;
             animation-duration: .3s;
         }
     }
 
-    .file__upload_preview_dialog {
+    .anteikudevs-fileupload\:preview_dialog {
         position: relative;
         border-radius: 10px;
         background-color: #fff;
@@ -405,9 +447,9 @@ $breakpoints-xxl: 1400px;
             width: 500px;
         }
      
-        .file__upload_preview_content {
+        .anteikudevs-fileupload\:preview_content {
             
-            .file__upload_preview_header {
+            .anteikudevs-fileupload\:preview_header {
                 position: relative;
                 width: 100%;
                 padding: 1rem;
@@ -415,13 +457,13 @@ $breakpoints-xxl: 1400px;
                 align-items: center;
                 justify-content: space-between;
 
-                .file__upload_preview_title {
+                .anteikudevs-fileupload\:preview_title {
                     font-size: 1.6rem;
                     margin: 0;
                     color: var(--file-upload-primary,$primary)
                 }
 
-                .file__upload_preview_btn_close {
+                .anteikudevs-fileupload\:preview_btn_close {
                     width: 25px;
                     height: 25px;
                     border-radius: 50%;
@@ -443,14 +485,14 @@ $breakpoints-xxl: 1400px;
 
             }
             
-            .file__upload_preview_body {
+            .anteikudevs-fileupload\:preview_body {
                 width: 100%;
                 position: relative;
                 padding: .5rem 1rem;
                 min-height: 100px;
             } 
             
-            .file__upload_preview_footer {
+            .anteikudevs-fileupload\:preview_footer {
                 width: 100%;
                 padding: 1rem .8rem;
                 display: flex;
@@ -476,7 +518,7 @@ $breakpoints-xxl: 1400px;
 
 }
 
-.file__upload_preview_backdrop {
+.anteikudevs-fileupload\:preview_backdrop {
     position: fixed;
     top: 0;
     left: 0;
@@ -487,7 +529,7 @@ $breakpoints-xxl: 1400px;
     display: none;
 }
 
-body.file__upload_show .file__upload_preview_backdrop {
+body.anteikudevs-fileupload\:show .anteikudevs-fileupload\:preview_backdrop {
     display: block;
     animation: fadeIn;
     animation-duration: .3s;
