@@ -838,7 +838,7 @@ class FileUpload {
             resultItemId = '__'+file_upload_GenerateRandId(12),
             itemIds ='__'+file_upload_GenerateRandId(13) ;
 
-        let content = `<div class="anteikudevs-fileupload:result_item" ${itemIds}>${resultImg}<div class="anteikudevs-fileupload:result_info"><h4 class="anteikudevs-fileupload:result_info_title"><a href="${data.data}" target="_blank">${data.name}</a></h4></div><div class="anteikudevs-fileupload:result_action"><button type="button" class="anteikudevs-fileupload:result_action_close" ${closeIds}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg></button></div></div>`
+        let content = `<div class="anteikudevs-fileupload:result_item" ${itemIds}>${resultImg}<div class="anteikudevs-fileupload:result_info"><h4 class="anteikudevs-fileupload:result_info_title">${data.name}</h4></div><div class="anteikudevs-fileupload:result_action"><button type="button" class="anteikudevs-fileupload:result_action_close" ${closeIds}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg></button></div></div>`
 
         file_upload_createEvent('['+closeIds+']','click',function(e){
             _this.removeSetValue(itemIds,data.id)
@@ -918,6 +918,23 @@ class FileUpload {
         this.currentData = []
         $(this.contentId).html('')
         
+    }
+
+    
+    testFetch()
+    {
+        let formData = new FormData()
+        formData.append('logo',this.blob[0])
+
+        fetch('http://localhost:8000/api/company/profile/upload-logo', {
+            method: 'POST',
+            headers: {
+                'Authorization': "Bearer 63|R8oWJnwGXSwDjraiQjFqsHBYCegyDbXEAtCJ89fR"
+            },
+            body: formData
+        })
+        .then(res => res.json())
+        .then(res => console.log(res))
     }
 
 }

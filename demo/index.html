@@ -18,7 +18,7 @@
             background-size: cover;
         }
 
-        .btn-clear {
+        .btn-save {
             display: block;
             width: 100%;
             padding: .8rem 1rem;
@@ -49,11 +49,11 @@
     
     <div class="container">
         <div id="demo-file-upload" data-theme="dark"></div>
-        <button class="btn-clear">Clear</button>
+        <button class="btn-save">Clear</button>
     </div>
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="./file-upload.min.js"></script>
+<script src="../file-upload-blob.js"></script>
 <script>
 
     let cardUpload = new FileUpload('#demo-file-upload', {
@@ -75,9 +75,9 @@
     $(document).on('upload','#demo-file-upload', function(){
         cardUpload.log(cardUpload.getValue(true))
     })
-    $(document).on('click','.btn-clear',function(e){
+    $(document).on('click','.btn-save',function(e){
         e.preventDefault()
-        cardUpload.clear()
+        cardUpload.testFetch()
     })
 </script>
 </body>
