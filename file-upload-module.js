@@ -84,6 +84,8 @@ class FileUpload {
         this.lang           = 'en'
         this.customs        = null
 
+        this.name           = null
+        this.multipart      = false
         // el
 
         this.selectorId     = ''
@@ -181,6 +183,20 @@ class FileUpload {
                 this.acceptInput = acceptFiles
             }
             this.accept = acceptConfig
+        }
+
+        if(typeof config.multipart != undefined)
+        {
+            
+            if(typeof config.multipart == 'boolean')
+            {
+                this.multipart = config.multipart
+            }
+        }
+        
+        if(config.name)
+        {
+            this.name = config.name
         }
 
         if(typeof config.maxSize != 'undefined')
@@ -344,13 +360,34 @@ class FileUpload {
 
         this.browseId = '['+btnInputRender+']'
 
-        let inputContent = $(document.createElement('div')).append($(document.createElement('input')).attr({
-            type: "file",
-            accept: this.acceptInput,
-            hidden: true,
-            multiple: true,
-            [contentInputRender]: ''
-        }))
+        let fileInputContent = ''
+
+        let multipleInput = this.maxFile > 1? true : false;
+
+        let inputName = this.name? this.name : 'files'
+
+        if(this.multipart)
+        {
+            fileInputContent = $(document.createElement('input')).attr({
+                type: "file",
+                accept: this.acceptInput,
+                hidden: true,
+                multiple: multipleInput,
+                name: inputName,
+                [contentInputRender]: ''
+            }).prop('outerHTML')
+
+        }else{
+            let inputContent = $(document.createElement('div')).append($(document.createElement('input')).attr({
+                type: "file",
+                accept: this.acceptInput,
+                hidden: true,
+                multiple: multipleInput,
+                name: inputName,
+                [contentInputRender]: ''
+            }))
+            $('body').append(inputContent)
+        }
 
         let browseText = 'Browse'
 
@@ -359,9 +396,8 @@ class FileUpload {
             browseText = 'Jelajahi'
         }
 
-        $('body').append(inputContent)
 
-        let content = `<div class="anteikudevs-fileupload:action"><button type="button" class="anteikudevs-fileupload:action_browse" ${btnInputRender}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M88.7 223.8L0 375.8V96C0 60.7 28.7 32 64 32H181.5c17 0 33.3 6.7 45.3 18.7l26.5 26.5c12 12 28.3 18.7 45.3 18.7H416c35.3 0 64 28.7 64 64v32H144c-22.8 0-43.8 12.1-55.3 31.8zm27.6 16.1C122.1 230 132.6 224 144 224H544c11.5 0 22 6.1 27.7 16.1s5.7 22.2-.1 32.1l-112 192C453.9 474 443.4 480 432 480H32c-11.5 0-22-6.1-27.7-16.1s-5.7-22.2 .1-32.1l112-192z"/></svg> ${browseText}</button></div>`
+        let content = `<div class="anteikudevs-fileupload:action"><button type="button" class="anteikudevs-fileupload:action_browse" ${btnInputRender}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M88.7 223.8L0 375.8V96C0 60.7 28.7 32 64 32H181.5c17 0 33.3 6.7 45.3 18.7l26.5 26.5c12 12 28.3 18.7 45.3 18.7H416c35.3 0 64 28.7 64 64v32H144c-22.8 0-43.8 12.1-55.3 31.8zm27.6 16.1C122.1 230 132.6 224 144 224H544c11.5 0 22 6.1 27.7 16.1s5.7 22.2-.1 32.1l-112 192C453.9 474 443.4 480 432 480H32c-11.5 0-22-6.1-27.7-16.1s-5.7-22.2 .1-32.1l112-192z"/></svg> ${browseText}</button> ${fileInputContent}</div>`
 
         file_upload_createEvent('['+btnInputRender+']','click',function(e){
             $('['+contentInputRender+']').trigger('click')
@@ -586,7 +622,7 @@ class FileUpload {
 
             if(files.length == (i+1))
             {
-                $(_this.inputId).val('')
+                // $(_this.inputId).val('')
                 setTimeout(() => {
                     _this.loading('hide')
                 },300)
@@ -844,7 +880,7 @@ class FileUpload {
                 fileNameHighlight = fileNameHighlight.substr(0, 10) + '....' + fileNameHighlight.substr(fileNameHighlight.length-10, fileNameHighlight.length);
             }
 
-        let content = `<div class="anteikudevs-fileupload:result_item" ${itemIds}>${resultImg}<div class="anteikudevs-fileupload:result_info"><h4 class="anteikudevs-fileupload:result_info_title"><a href="${data.data}" target="_blank">${fileNameHighlighte}</a></h4></div><div class="anteikudevs-fileupload:result_action"><button type="button" class="anteikudevs-fileupload:result_action_close" ${closeIds}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg></button></div></div>`
+        let content = `<div class="anteikudevs-fileupload:result_item" ${itemIds}>${resultImg}<div class="anteikudevs-fileupload:result_info"><h4 class="anteikudevs-fileupload:result_info_title"><a href="${data.data}" target="_blank">${fileNameHighlight}</a></h4></div><div class="anteikudevs-fileupload:result_action"><button type="button" class="anteikudevs-fileupload:result_action_close" ${closeIds}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg></button></div></div>`
 
         file_upload_createEvent('['+closeIds+']','click',function(e){
             _this.removeSetValue(itemIds,data.id)
@@ -922,7 +958,8 @@ class FileUpload {
 
         this.data = []
         this.currentData = []
-        $(this.contentId).html('')
+
+        $(this.resultId).html('')
         
     }
 

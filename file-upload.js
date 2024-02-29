@@ -2,7 +2,7 @@ if(typeof $ == 'undefined'){
     alert('File Upload : Jquery is required!');
 }
 
-$('head').append("<style>@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap'); * { box-sizing: border-box; } .anteikudevs-fileupload { --file-upload-background: #fff; --file-upload-primary: #f57272; --file-upload-secondary: #fffcec; --file-upload-tertiary: #FFB68F; position: relative; user-select: none; font-family: 'Poppins', sans-serif !important; max-width: 400px; } .anteikudevs-fileupload img { max-width: 100%; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content { background-color: var(--file-upload-background, #fff); width: 100%; display: flex; flex-direction: row; border-radius: 10px; align-items: center; padding: 0.8rem 1rem; gap: 1rem; grid-row: 2/span 2; box-shadow: 0 0 10px rgba(100, 100, 100, 0.15); transition: all 0.2s linear; animation: zoomIn; animation-duration: 0.2s; position: relative; border-image-width: 5px; overflow: hidden; flex-wrap: wrap; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content.drag { border-color: #FFD424; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content.drop { border-color: #03AC0E; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:icon { width: 70px; height: 70px; border-radius: 5px; background-color: var(--file-upload-secondary, #fffcec); border: 1px solid var(--file-upload-primary, #f57272); color: var(--file-upload-primary, #f57272); display: flex; align-items: center; flex-direction: column; justify-content: center; font-size: 20px; position: relative; padding: 0.8rem 0; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:icon .anteikudevs-fileupload\\:icon_svg { width: 20px; height: 20px; margin-bottom: 5px; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:icon .anteikudevs-fileupload\\:icon_svg svg path { fill: var(--file-upload-primary, #f57272); } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:icon .anteikudevs-fileupload\\:highlight { width: 100%; font-size: 10px; display: block; color: var(--file-upload-primary, #f57272); text-align: center; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:info { flex: 1; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:info .anteikudevs-fileupload\\:info_title { margin: 0; font-size: 14px; font-weight: 600; margin-bottom: 5px; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:info .anteikudevs-fileupload\\:info_span { font-size: 12px; color: #6c757d; display: block; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action { width: 100%; text-align: right; } @media screen and (min-width: 768px) { .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action { width: 90px; } } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse.disabled { pointer-events: none; background-color: #f8f9fa; color: #ced4da; border-color: transparent; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse.disabled svg { fill: #ced4da; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse { transition: all 0.2s linear; display: inline-flex; align-items: center; justify-content: center; background-color: var(--file-upload-background, #fff); border-radius: 10px; border: 1.5px solid var(--file-upload-primary, #f57272); color: var(--file-upload-primary, #f57272); padding: 10px 12px; user-select: none; cursor: pointer; width: 100%; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse svg { width: 20px; margin-right: 0.3rem; fill: var(--file-upload-primary, #f57272); transition: fill 0.3s linear; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse:focus, .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse:hover, .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse:active { border-color: transparent; background-color: var(--file-upload-primary, #f57272); color: var(--file-upload-background, #fff); } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse:focus svg, .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse:hover svg, .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse:active svg { fill: var(--file-upload-background, #fff); } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse.disabled:focus, .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse.disabled:hover, .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse.disabled:active { background-color: #f8f9fa; color: #ced4da; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse.disabled:focus svg, .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse.disabled:hover svg, .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse.disabled:active svg { fill: #ced4da; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:loading { width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: rgba(255, 255, 255, 0.5); display: flex; align-items: center; justify-content: center; z-index: -1; transition: all 0.2s linear; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:loading svg { width: 50px; height: 50px; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:loading svg circle { stroke: var(--file-upload-primary, #f57272); } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:dragged { width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: rgb(255, 255, 255); display: flex; align-items: center; justify-content: center; z-index: -1; transition: all 0.2s linear; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:dragged svg { width: 50px; height: 50px; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:dragged svg circle { stroke: var(--file-upload-primary, #f57272); } .anteikudevs-fileupload .anteikudevs-fileupload\\:error { position: relative; width: 100%; } .anteikudevs-fileupload .anteikudevs-fileupload\\:error .anteikudevs-fileupload\\:error_item { font-size: 12px; color: #dc3545; display: block; margin-top: 10px; font-weight: 500; padding: 0.5rem 0.8rem; border: 1px solid var(--file-upload-danger, #dc3545); border-radius: 10px; background: var(--file-upload-sub-danger, #fcf0f1); } .anteikudevs-fileupload .anteikudevs-fileupload\\:error .anteikudevs-fileupload\\:error_item .anteikudevs-fileupload\\:error_filename { max-width: 100px; } .anteikudevs-fileupload .anteikudevs-fileupload\\:result { position: relative; width: 100%; } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item { width: 100%; display: flex; flex-direction: row; border-radius: 10px; align-items: center; padding: 15px; gap: 10px; margin-top: 15px; margin-bottom: 8px; box-shadow: 0 0 8px #eaeaea; animation: fadeIn; animation-duration: 0.5s; background-color: var(--file-upload-background, #fff); } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_image { width: 43px; height: 43px; border-radius: 5px; display: flex; align-items: center; border: 1px solid var(--file-upload-primary, #f57272); overflow: hidden; cursor: pointer; background-color: var(--file-upload-secondary, #fffcec); } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_image img { transition: all 0.2s linear; } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_image svg { width: 20px; height: 20px; margin: auto; } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_image svg path { fill: var(--file-upload-primary, #f57272); } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_image:hover img { transform: scale(1.5); } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_info { flex: 1; } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_info .anteikudevs-fileupload\\:result_info_title { font-size: 14px; font-weight: 600; margin: 0; margin-bottom: 5px; display: -webkit-box; -webkit-line-clamp: 1; /* Number of lines to display */ -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_info .file_upload_result_info_span { font-size: 12px; display: block; color: #adb5bd; } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_action { width: 20px; } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_action .anteikudevs-fileupload\\:result_action_close { width: 25px; height: 25px; transition: all 0.2s linear; display: inline-flex; align-items: center; justify-content: center; background-color: var(--file-upload-primary, #f57272); border-radius: 50%; color: var(--file-upload-primary, #f57272); user-select: none; border: 0; outline: none; font-size: 12px; cursor: pointer; } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_action .anteikudevs-fileupload\\:result_action_close svg { width: 13px; height: 13px; fill: var(--file-upload-background, #fff); } .anteikudevs-fileupload\\:preview { position: fixed; top: 0; left: 0; width: 100%; height: 100%; padding: 0.5rem; display: none; z-index: 1060; max-height: 100vh; overflow: auto; transition: all 0.2s linear; } .anteikudevs-fileupload\\:preview img { width: 100%; } .anteikudevs-fileupload\\:preview.show { display: flex; } .anteikudevs-fileupload\\:preview.show .anteikudevs-fileupload\\:preview_dialog { display: block; animation: zoomIn; animation-duration: 0.3s; } .anteikudevs-fileupload\\:preview.hiding .anteikudevs-fileupload\\:preview_dialog { animation: zoomOut; animation-duration: 0.3s; } .anteikudevs-fileupload\\:preview .anteikudevs-fileupload\\:preview_dialog { position: relative; border-radius: 10px; background-color: #fff; width: 100%; margin: auto; display: none; box-shadow: 0 0 10px rgba(154, 154, 154, 0.21); } @media screen and (min-width: 768px) { .anteikudevs-fileupload\\:preview .anteikudevs-fileupload\\:preview_dialog { width: 500px; } } .anteikudevs-fileupload\\:preview .anteikudevs-fileupload\\:preview_dialog .anteikudevs-fileupload\\:preview_content .anteikudevs-fileupload\\:preview_header { position: relative; width: 100%; padding: 1rem; display: flex; align-items: center; justify-content: space-between; } .anteikudevs-fileupload\\:preview .anteikudevs-fileupload\\:preview_dialog .anteikudevs-fileupload\\:preview_content .anteikudevs-fileupload\\:preview_header .anteikudevs-fileupload\\:preview_title { font-size: 1.6rem; margin: 0; color: var(--file-upload-primary, #f57272); } .anteikudevs-fileupload\\:preview .anteikudevs-fileupload\\:preview_dialog .anteikudevs-fileupload\\:preview_content .anteikudevs-fileupload\\:preview_header .anteikudevs-fileupload\\:preview_btn_close { width: 25px; height: 25px; border-radius: 50%; background-color: var(--file-upload-primary, #f57272); display: flex; align-items: center; justify-content: center; border: 0; outline: none; cursor: pointer; } .anteikudevs-fileupload\\:preview .anteikudevs-fileupload\\:preview_dialog .anteikudevs-fileupload\\:preview_content .anteikudevs-fileupload\\:preview_header .anteikudevs-fileupload\\:preview_btn_close svg { width: 15px; height: 15px; fill: var(--file-upload-background, #fff); } .anteikudevs-fileupload\\:preview .anteikudevs-fileupload\\:preview_dialog .anteikudevs-fileupload\\:preview_content .anteikudevs-fileupload\\:preview_body { width: 100%; position: relative; padding: 0.5rem 1rem; min-height: 100px; } .anteikudevs-fileupload\\:preview .anteikudevs-fileupload\\:preview_dialog .anteikudevs-fileupload\\:preview_content .anteikudevs-fileupload\\:preview_footer { width: 100%; padding: 1rem 0.8rem; display: flex; justify-content: space-between; } .anteikudevs-fileupload\\:preview .anteikudevs-fileupload\\:preview_dialog .anteikudevs-fileupload\\:preview_content .anteikudevs-fileupload\\:preview_footer .btn { display: inline-block; background-color: var(--file-upload-primary, #f57272); color: var(--file-upload-background, #fff); border: 0; border-radius: 10px; padding: 0.6rem 1rem; margin: 0 auto; cursor: pointer; outline: none; } .anteikudevs-fileupload\\:preview_backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.15); z-index: 1060; display: none; } body.anteikudevs-fileupload\\:show .anteikudevs-fileupload\\:preview_backdrop { display: block; animation: fadeIn; animation-duration: 0.3s; } @-webkit-keyframes zoomIn { 0% { opacity: 0; -webkit-transform: scale3d(0.3, 0.3, 0.3); transform: scale3d(0.3, 0.3, 0.3); } 50% { opacity: 1; } } @keyframes zoomIn { 0% { opacity: 0; -webkit-transform: scale3d(0.3, 0.3, 0.3); transform: scale3d(0.3, 0.3, 0.3); } 50% { opacity: 1; } } @-webkit-keyframes fadeIn { 0% { opacity: 0; } to { opacity: 1; } } @keyframes fadeIn { 0% { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes zoomOut { 0% { opacity: 1; } 50% { opacity: 0; -webkit-transform: scale3d(0.3, 0.3, 0.3); transform: scale3d(0.3, 0.3, 0.3); } to { opacity: 0; } } @keyframes zoomOut { 0% { opacity: 1; } 50% { opacity: 0; -webkit-transform: scale3d(0.3, 0.3, 0.3); transform: scale3d(0.3, 0.3, 0.3); } to { opacity: 0; } }</style>")
+$('head').append("<style>@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap'); * { box-sizing: border-box; } .anteikudevs-fileupload { --file-upload-background: #fff; --file-upload-primary: #f57272; --file-upload-secondary: #fffcec; --file-upload-tertiary: #FFB68F; position: relative; user-select: none; font-family: 'Poppins', sans-serif !important; max-width: 576px; } .anteikudevs-fileupload img { max-width: 100%; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content { background-color: var(--file-upload-background, #fff); width: 100%; display: flex; flex-direction: row; border-radius: 10px; align-items: center; padding: 0.8rem 1rem; gap: 1rem; grid-row: 2/span 2; box-shadow: 0 0 10px rgba(100, 100, 100, 0.15); transition: all 0.2s linear; animation: zoomIn; animation-duration: 0.2s; position: relative; border-image-width: 5px; overflow: hidden; flex-wrap: wrap; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content.drag { border-color: #FFD424; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content.drop { border-color: #03AC0E; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:icon { width: 70px; height: 70px; border-radius: 5px; background-color: var(--file-upload-secondary, #fffcec); border: 1px solid var(--file-upload-primary, #f57272); color: var(--file-upload-primary, #f57272); display: flex; align-items: center; flex-direction: column; justify-content: center; font-size: 20px; position: relative; padding: 0.8rem 0; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:icon .anteikudevs-fileupload\\:icon_svg { width: 20px; height: 20px; margin-bottom: 5px; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:icon .anteikudevs-fileupload\\:icon_svg svg path { fill: var(--file-upload-primary, #f57272); } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:icon .anteikudevs-fileupload\\:highlight { width: 100%; font-size: 10px; display: block; color: var(--file-upload-primary, #f57272); text-align: center; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:info { flex: 1; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:info .anteikudevs-fileupload\\:info_title { margin: 0; font-size: 14px; font-weight: 600; margin-bottom: 5px; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:info .anteikudevs-fileupload\\:info_span { font-size: 12px; color: #6c757d; display: block; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action { width: 100%; text-align: right; } @media screen and (min-width: 768px) { .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action { width: 90px; } } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse.disabled { pointer-events: none; background-color: #f8f9fa; color: #ced4da; border-color: transparent; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse.disabled svg { fill: #ced4da; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse { transition: all 0.2s linear; display: inline-flex; align-items: center; justify-content: center; background-color: var(--file-upload-background, #fff); border-radius: 10px; border: 1.5px solid var(--file-upload-primary, #f57272); color: var(--file-upload-primary, #f57272); padding: 10px 12px; user-select: none; cursor: pointer; width: 100%; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse svg { width: 20px; margin-right: 0.3rem; fill: var(--file-upload-primary, #f57272); transition: fill 0.3s linear; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse:focus, .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse:hover, .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse:active { border-color: transparent; background-color: var(--file-upload-primary, #f57272); color: var(--file-upload-background, #fff); } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse:focus svg, .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse:hover svg, .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse:active svg { fill: var(--file-upload-background, #fff); } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse.disabled:focus, .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse.disabled:hover, .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse.disabled:active { background-color: #f8f9fa; color: #ced4da; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse.disabled:focus svg, .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse.disabled:hover svg, .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:action .anteikudevs-fileupload\\:action_browse.disabled:active svg { fill: #ced4da; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:loading { width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: rgba(255, 255, 255, 0.5); display: flex; align-items: center; justify-content: center; z-index: -1; transition: all 0.2s linear; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:loading svg { width: 50px; height: 50px; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:loading svg circle { stroke: var(--file-upload-primary, #f57272); } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:dragged { width: 100%; height: 100%; position: absolute; top: 0; left: 0; background-color: rgb(255, 255, 255); display: flex; align-items: center; justify-content: center; z-index: -1; transition: all 0.2s linear; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:dragged svg { width: 50px; height: 50px; } .anteikudevs-fileupload .anteikudevs-fileupload\\:content .anteikudevs-fileupload\\:dragged svg circle { stroke: var(--file-upload-primary, #f57272); } .anteikudevs-fileupload .anteikudevs-fileupload\\:error { position: relative; width: 100%; } .anteikudevs-fileupload .anteikudevs-fileupload\\:error .anteikudevs-fileupload\\:error_item { font-size: 12px; color: #dc3545; display: block; margin-top: 10px; font-weight: 500; padding: 0.5rem 0.8rem; border: 1px solid var(--file-upload-danger, #dc3545); border-radius: 10px; background: var(--file-upload-sub-danger, #fcf0f1); } .anteikudevs-fileupload .anteikudevs-fileupload\\:error .anteikudevs-fileupload\\:error_item .anteikudevs-fileupload\\:error_filename { max-width: 100px; } .anteikudevs-fileupload .anteikudevs-fileupload\\:result { position: relative; width: 100%; } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item { width: 100%; display: flex; flex-direction: row; border-radius: 10px; align-items: center; padding: 15px; gap: 10px; margin-top: 15px; margin-bottom: 8px; box-shadow: 0 0 8px #eaeaea; animation: fadeIn; animation-duration: 0.5s; background-color: var(--file-upload-background, #fff); } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_image { width: 43px; height: 43px; border-radius: 5px; display: flex; align-items: center; border: 1px solid var(--file-upload-primary, #f57272); overflow: hidden; cursor: pointer; background-color: var(--file-upload-secondary, #fffcec); } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_image img { transition: all 0.2s linear; } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_image svg { width: 20px; height: 20px; margin: auto; } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_image svg path { fill: var(--file-upload-primary, #f57272); } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_image:hover img { transform: scale(1.5); } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_info { flex: 1; } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_info .anteikudevs-fileupload\\:result_info_title { font-size: 14px; font-weight: 600; margin: 0; margin-bottom: 5px; display: -webkit-box; -webkit-line-clamp: 1; /* Number of lines to display */ -webkit-box-orient: vertical; overflow: hidden; text-overflow: ellipsis; } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_info .file_upload_result_info_span { font-size: 12px; display: block; color: #adb5bd; } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_action { width: 20px; } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_action .anteikudevs-fileupload\\:result_action_close { width: 25px; height: 25px; transition: all 0.2s linear; display: inline-flex; align-items: center; justify-content: center; background-color: var(--file-upload-primary, #f57272); border-radius: 50%; color: var(--file-upload-primary, #f57272); user-select: none; border: 0; outline: none; font-size: 12px; cursor: pointer; } .anteikudevs-fileupload .anteikudevs-fileupload\\:result .anteikudevs-fileupload\\:result_item .anteikudevs-fileupload\\:result_action .anteikudevs-fileupload\\:result_action_close svg { width: 13px; height: 13px; fill: var(--file-upload-background, #fff); } .anteikudevs-fileupload\\:preview { position: fixed; top: 0; left: 0; width: 100%; height: 100%; padding: 0.5rem; display: none; z-index: 1060; max-height: 100vh; overflow: auto; transition: all 0.2s linear; } .anteikudevs-fileupload\\:preview img { width: 100%; } .anteikudevs-fileupload\\:preview.show { display: flex; } .anteikudevs-fileupload\\:preview.show .anteikudevs-fileupload\\:preview_dialog { display: block; animation: zoomIn; animation-duration: 0.3s; } .anteikudevs-fileupload\\:preview.hiding .anteikudevs-fileupload\\:preview_dialog { animation: zoomOut; animation-duration: 0.3s; } .anteikudevs-fileupload\\:preview .anteikudevs-fileupload\\:preview_dialog { position: relative; border-radius: 10px; background-color: #fff; width: 100%; margin: auto; display: none; box-shadow: 0 0 10px rgba(154, 154, 154, 0.21); } @media screen and (min-width: 768px) { .anteikudevs-fileupload\\:preview .anteikudevs-fileupload\\:preview_dialog { width: 500px; } } .anteikudevs-fileupload\\:preview .anteikudevs-fileupload\\:preview_dialog .anteikudevs-fileupload\\:preview_content .anteikudevs-fileupload\\:preview_header { position: relative; width: 100%; padding: 1rem; display: flex; align-items: center; justify-content: space-between; } .anteikudevs-fileupload\\:preview .anteikudevs-fileupload\\:preview_dialog .anteikudevs-fileupload\\:preview_content .anteikudevs-fileupload\\:preview_header .anteikudevs-fileupload\\:preview_title { font-size: 1.6rem; margin: 0; color: var(--file-upload-primary, #f57272); } .anteikudevs-fileupload\\:preview .anteikudevs-fileupload\\:preview_dialog .anteikudevs-fileupload\\:preview_content .anteikudevs-fileupload\\:preview_header .anteikudevs-fileupload\\:preview_btn_close { width: 25px; height: 25px; border-radius: 50%; background-color: var(--file-upload-primary, #f57272); display: flex; align-items: center; justify-content: center; border: 0; outline: none; cursor: pointer; } .anteikudevs-fileupload\\:preview .anteikudevs-fileupload\\:preview_dialog .anteikudevs-fileupload\\:preview_content .anteikudevs-fileupload\\:preview_header .anteikudevs-fileupload\\:preview_btn_close svg { width: 15px; height: 15px; fill: var(--file-upload-background, #fff); } .anteikudevs-fileupload\\:preview .anteikudevs-fileupload\\:preview_dialog .anteikudevs-fileupload\\:preview_content .anteikudevs-fileupload\\:preview_body { width: 100%; position: relative; padding: 0.5rem 1rem; min-height: 100px; } .anteikudevs-fileupload\\:preview .anteikudevs-fileupload\\:preview_dialog .anteikudevs-fileupload\\:preview_content .anteikudevs-fileupload\\:preview_footer { width: 100%; padding: 1rem 0.8rem; display: flex; justify-content: space-between; } .anteikudevs-fileupload\\:preview .anteikudevs-fileupload\\:preview_dialog .anteikudevs-fileupload\\:preview_content .anteikudevs-fileupload\\:preview_footer .btn { display: inline-block; background-color: var(--file-upload-primary, #f57272); color: var(--file-upload-background, #fff); border: 0; border-radius: 10px; padding: 0.6rem 1rem; margin: 0 auto; cursor: pointer; outline: none; } .anteikudevs-fileupload\\:preview_backdrop { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.15); z-index: 1060; display: none; } body.anteikudevs-fileupload\\:show .anteikudevs-fileupload\\:preview_backdrop { display: block; animation: fadeIn; animation-duration: 0.3s; } @-webkit-keyframes zoomIn { 0% { opacity: 0; -webkit-transform: scale3d(0.3, 0.3, 0.3); transform: scale3d(0.3, 0.3, 0.3); } 50% { opacity: 1; } } @keyframes zoomIn { 0% { opacity: 0; -webkit-transform: scale3d(0.3, 0.3, 0.3); transform: scale3d(0.3, 0.3, 0.3); } 50% { opacity: 1; } } @-webkit-keyframes fadeIn { 0% { opacity: 0; } to { opacity: 1; } } @keyframes fadeIn { 0% { opacity: 0; } to { opacity: 1; } } @-webkit-keyframes zoomOut { 0% { opacity: 1; } 50% { opacity: 0; -webkit-transform: scale3d(0.3, 0.3, 0.3); transform: scale3d(0.3, 0.3, 0.3); } to { opacity: 0; } } @keyframes zoomOut { 0% { opacity: 1; } 50% { opacity: 0; -webkit-transform: scale3d(0.3, 0.3, 0.3); transform: scale3d(0.3, 0.3, 0.3); } to { opacity: 0; } }</style>")
 
 let file_upload_acceptedFiles = {
     "mp3" 	: {"type": "audio","format": "audio/mpeg"},
@@ -84,6 +84,8 @@ class FileUpload {
         this.lang           = 'en'
         this.customs        = null
 
+        this.name           = null
+        this.multipart      = false
         // el
 
         this.selectorId     = ''
@@ -181,6 +183,20 @@ class FileUpload {
                 this.acceptInput = acceptFiles
             }
             this.accept = acceptConfig
+        }
+
+        if(typeof config.multipart != undefined)
+        {
+            
+            if(typeof config.multipart == 'boolean')
+            {
+                this.multipart = config.multipart
+            }
+        }
+        
+        if(config.name)
+        {
+            this.name = config.name
         }
 
         if(typeof config.maxSize != 'undefined')
@@ -336,21 +352,52 @@ class FileUpload {
     {
         let _this = this
         let contentInputRender = '__'+file_upload_GenerateRandId(7)
+        let contentInputDeletedIdRender = '__'+file_upload_GenerateRandId(8)
 
         this.inputId = '['+contentInputRender+']'
+        this.inputDeletedId = '['+contentInputDeletedIdRender+']'
 
         let btnInputRender = '__'+file_upload_GenerateRandId(8) 
 
 
         this.browseId = '['+btnInputRender+']'
 
-        let inputContent = $(document.createElement('div')).append($(document.createElement('input')).attr({
-            type: "file",
-            accept: this.acceptInput,
+        let fileInputContent = ''
+        let fileInputContentDeletedId = ''
+
+        let multipleInput = this.maxFile > 1? true : false;
+
+        let inputName = this.name? this.name : 'files'
+
+        fileInputContentDeletedId = $(document.createElement('input')).attr({
+            type: "text",
             hidden: true,
-            multiple: true,
-            [contentInputRender]: ''
-        }))
+            name: 'deleted_ids',
+            [contentInputDeletedIdRender]: ''
+        }).prop('outerHTML')
+        
+        if(this.multipart)
+        {
+            fileInputContent = $(document.createElement('input')).attr({
+                type: "file",
+                accept: this.acceptInput,
+                hidden: true,
+                multiple: multipleInput,
+                name: inputName,
+                [contentInputRender]: ''
+            }).prop('outerHTML')
+
+        }else{
+            let inputContent = $(document.createElement('div')).append($(document.createElement('input')).attr({
+                type: "file",
+                accept: this.acceptInput,
+                hidden: true,
+                multiple: multipleInput,
+                name: inputName,
+                [contentInputRender]: ''
+            }))
+            $('body').append(inputContent)
+        }
 
         let browseText = 'Browse'
 
@@ -359,9 +406,8 @@ class FileUpload {
             browseText = 'Jelajahi'
         }
 
-        $('body').append(inputContent)
 
-        let content = `<div class="anteikudevs-fileupload:action"><button type="button" class="anteikudevs-fileupload:action_browse" ${btnInputRender}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M88.7 223.8L0 375.8V96C0 60.7 28.7 32 64 32H181.5c17 0 33.3 6.7 45.3 18.7l26.5 26.5c12 12 28.3 18.7 45.3 18.7H416c35.3 0 64 28.7 64 64v32H144c-22.8 0-43.8 12.1-55.3 31.8zm27.6 16.1C122.1 230 132.6 224 144 224H544c11.5 0 22 6.1 27.7 16.1s5.7 22.2-.1 32.1l-112 192C453.9 474 443.4 480 432 480H32c-11.5 0-22-6.1-27.7-16.1s-5.7-22.2 .1-32.1l112-192z"/></svg> ${browseText}</button></div>`
+        let content = `<div class="anteikudevs-fileupload:action"><button type="button" class="anteikudevs-fileupload:action_browse" ${btnInputRender}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M88.7 223.8L0 375.8V96C0 60.7 28.7 32 64 32H181.5c17 0 33.3 6.7 45.3 18.7l26.5 26.5c12 12 28.3 18.7 45.3 18.7H416c35.3 0 64 28.7 64 64v32H144c-22.8 0-43.8 12.1-55.3 31.8zm27.6 16.1C122.1 230 132.6 224 144 224H544c11.5 0 22 6.1 27.7 16.1s5.7 22.2-.1 32.1l-112 192C453.9 474 443.4 480 432 480H32c-11.5 0-22-6.1-27.7-16.1s-5.7-22.2 .1-32.1l112-192z"/></svg> ${browseText}</button> ${fileInputContent + fileInputContentDeletedId}</div>`
 
         file_upload_createEvent('['+btnInputRender+']','click',function(e){
             $('['+contentInputRender+']').trigger('click')
@@ -586,7 +632,10 @@ class FileUpload {
 
             if(files.length == (i+1))
             {
-                $(_this.inputId).val('')
+                if(_this.multipart == false)
+                {
+                    $(_this.inputId).val('')
+                }
                 setTimeout(() => {
                     _this.loading('hide')
                 },300)
@@ -791,6 +840,7 @@ class FileUpload {
     clear()
     {
         this.data = []
+        this.blob = []
         $(this.resultId).html('')
         this._refresh();
     }
@@ -813,20 +863,19 @@ class FileUpload {
     }
 
     drawSetValue(data){
-
         let _this = this
         let resultImg = ''
 
         let previewIds = '__'+file_upload_GenerateRandId(16)
 
-        if(this.getAcceptFileType(data.type) == 'image')
+        if(data.fileType == 'image')
         {
             resultImg = `<div class="anteikudevs-fileupload:result_image" ${previewIds}><img src="${data.data}" alt="${data.name}"></div>`
             file_upload_createEvent('['+previewIds+']','click',function(e){
                 _this.previewFile(data)
             })
         }
-        if(this.getAcceptFileType(data.type) == 'video')
+        if(data.fileType == 'video')
         {
             resultImg = `<div class="anteikudevs-fileupload:result_image" ${previewIds}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></div>`
             file_upload_createEvent('['+previewIds+']','click',function(e){
@@ -844,7 +893,7 @@ class FileUpload {
                 fileNameHighlight = fileNameHighlight.substr(0, 10) + '....' + fileNameHighlight.substr(fileNameHighlight.length-10, fileNameHighlight.length);
             }
 
-        let content = `<div class="anteikudevs-fileupload:result_item" ${itemIds}>${resultImg}<div class="anteikudevs-fileupload:result_info"><h4 class="anteikudevs-fileupload:result_info_title"><a href="${data.data}" target="_blank">${fileNameHighlighte}</a></h4></div><div class="anteikudevs-fileupload:result_action"><button type="button" class="anteikudevs-fileupload:result_action_close" ${closeIds}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg></button></div></div>`
+        let content = `<div class="anteikudevs-fileupload:result_item" ${itemIds}>${resultImg}<div class="anteikudevs-fileupload:result_info"><h4 class="anteikudevs-fileupload:result_info_title"><a href="${data.data}" target="_blank">${fileNameHighlight}</a></h4></div><div class="anteikudevs-fileupload:result_action"><button type="button" class="anteikudevs-fileupload:result_action_close" ${closeIds}><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><path d="M310.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L160 210.7 54.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L114.7 256 9.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 301.3 265.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L205.3 256 310.6 150.6z"/></svg></button></div></div>`
 
         file_upload_createEvent('['+closeIds+']','click',function(e){
             _this.removeSetValue(itemIds,data.id)
@@ -865,7 +914,10 @@ class FileUpload {
     }
 
     removeSetValue(selector,id){
-
+        let deletedVal = $(this.inputDeletedId).val().split(',')
+        deletedVal.push(id)
+        $(this.inputDeletedId).val(deletedVal.join(','))
+        console.log($(this.inputDeletedId).val())
         this.deletedIds.push(id)
         $('['+selector+']').fadeOut(200)
         setTimeout(() => {
@@ -879,31 +931,49 @@ class FileUpload {
 
         let _this = this
 
-        if(!Array.isArray(data)){
-            alert('setData not in array!')
-            return false;
-        }
         let currentData = []
-        $.each(data, function(i,key){
-            
-            if(key.data)
-            {   
-                let extension = key.data.split('.').pop()
+
+        if(!Array.isArray(data)){
+            let extension = data.data.split('.').pop()
                 
-                let name = key.name? key.name : key.data.split('/').pop()
+            let name = data.name? data.name : data.data.split('/').pop()
 
-                let objData = {
-                    id: key.id,
-                    name: name,
-                    type: file_upload_acceptedFiles[extension].format,
-                    data: key.data
-                }
-
-                _this.drawSetValue(objData)
-                currentData.push(objData)
+            let objData = {
+                id: data.id? data.id : file_upload_GenerateRandId(9),
+                name: name,
+                type: file_upload_acceptedFiles[extension].format,
+                fileType: _this.getAcceptFileType(file_upload_acceptedFiles[extension].format),
+                data: data.data
             }
 
-        })
+            _this.drawSetValue(objData)
+            currentData.push(objData)
+            
+        }else{
+
+            $.each(data, function(i,key){
+                
+                if(key.data)
+                {   
+                    let extension = key.data.split('.').pop()
+                    
+                    let name = key.name? key.name : key.data.split('/').pop()
+    
+                    let objData = {
+                        id: key.id,
+                        name: name,
+                        type: file_upload_acceptedFiles[extension].format,
+                        fileType: _this.getAcceptFileType(file_upload_acceptedFiles[extension].format),
+                        data: key.data
+                    }
+    
+                    _this.drawSetValue(objData)
+                    currentData.push(objData)
+                }
+    
+            })
+
+        }
 
         this.currentData = currentData
         this._refreshValue()
@@ -922,7 +992,8 @@ class FileUpload {
 
         this.data = []
         this.currentData = []
-        $(this.contentId).html('')
+
+        $(this.resultId).html('')
         
     }
 

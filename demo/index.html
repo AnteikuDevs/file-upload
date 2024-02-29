@@ -53,18 +53,17 @@
     </div>
 
 <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-<script src="../file-upload-blob.js"></script>
+<script src="../file-upload.js"></script>
 <script>
 
     let cardUpload = new FileUpload('#demo-file-upload', {
         title: "Demo FileUpload",
-        accept: [
-            'png',
-            'jpg',
-        ],
-        maxFile: 2,
+        // accept: ['pdf','exe'],
+        multipart: true,
+        name: 'thumbnail',
+        maxFile: 1,
         lang: 'en',
-        maxSize: 2,
+        // maxSize: 2,
         // customs: {
         //     primary: '#FF5900',
         //     secondary: '#FFF1EA',
@@ -73,7 +72,7 @@
     })
     
     $(document).on('upload','#demo-file-upload', function(){
-        cardUpload.log(cardUpload.getValue(true))
+        cardUpload.log($('[name=thumbnail]').val())
     })
     $(document).on('click','.btn-save',function(e){
         e.preventDefault()
